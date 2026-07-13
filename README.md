@@ -45,7 +45,7 @@ This plugin helps Claude Code work with xedi.ai as an EDI automation platform. I
 
 ## MCP Connection
 
-The plugin includes an MCP server definition for:
+The plugin includes an MCP server definition named `platform` for:
 
 ```text
 https://xedi.ai/mcp/server
@@ -56,6 +56,8 @@ When installed, Claude Code asks for an XEDI API token as sensitive plugin confi
 ```http
 Authorization: Bearer <your-xedi-api-token>
 ```
+
+In Claude's tool-call UI this appears as `plugin:xedi:platform`.
 
 ## Local Install
 
@@ -112,6 +114,7 @@ values on the trading partner document settings.
 - Workflow generation starts as draft unless the user has supplied all production choices and validation passes.
 - Claude should discover node types, connection fields and API shapes through XEDI MCP instead of guessing.
 - Dedicated MCP tools are preferred, with `xedi.api_request` used as the escape hatch for the full authenticated `/api/v1` surface.
+- Generated workflow drafts are validated before they are treated as usable; validation warnings are blockers to fix, not details to wave through.
 
 ## Repository Layout
 

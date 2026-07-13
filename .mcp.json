@@ -1,6 +1,6 @@
 {
   "mcpServers": {
-    "xedi": {
+    "platform": {
       "type": "http",
       "url": "https://xedi.ai/mcp/server",
       "headers": {
@@ -9,4 +9,3 @@
     }
   }
 }
-

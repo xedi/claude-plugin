@@ -4,13 +4,15 @@ description: Connect Claude Code to the full xedi.ai MCP and authenticated API s
 
 # XEDI MCP
 
-Use the bundled XEDI MCP server first. It is configured at:
+Use the bundled `platform` MCP server first. It is configured at:
 
 ```text
 https://xedi.ai/mcp/server
 ```
 
 The plugin asks the user for an XEDI API token as a sensitive plugin option and sends it as a bearer token.
+
+Claude may display tool calls as `plugin:xedi:platform`. That is the XEDI MCP connection.
 
 ## Discovery
 
@@ -45,5 +47,6 @@ For the full current tool map, read `../../references/mcp-capabilities.md`.
 - Treat connection secrets as write-only. They are encrypted and are not returned by API or MCP responses.
 - Keep workflow definitions in trigger-to-output node order because execution follows node order.
 - Validate workflows before making them active.
+- Do not describe XEDI as mocked unless the tool response explicitly says the specific endpoint or route is mocked.
 - Ask for confirmation before purchase, subscription, archive or delete actions.
 - Do not expose TGMS connector internals, SFTP folder names or transport implementation details to end users.

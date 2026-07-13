@@ -69,6 +69,8 @@ Always inspect `xedi.connection_types` before creating or updating a connection.
 
 Use `xedi.api_request` for workflow run list queries such as `GET /api/v1/workflow-runs?status=failed&retryable=1` when a dedicated list tool is not available.
 
+Workflow drafts are not reliable until validated. After `xedi.workflow_generate`, call `xedi.workflow_validate`. Repair invalid graphs using `xedi.workflow_node_types`, not guessed node types. The first node must be the trigger node matching `trigger_type`, and every node must be reachable from that trigger.
+
 ## Usage, Tokens And Subscriptions
 
 - `xedi.usage_summary`: Return API usage totals, endpoint usage and token estimates.
@@ -127,4 +129,3 @@ Treat billing and purchase actions as high-impact. Confirm intent before calling
 - `POST /tokens/top-up`
 - `GET /subscriptions`
 - `POST /subscriptions`
-

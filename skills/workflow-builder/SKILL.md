@@ -9,11 +9,20 @@ Build workflows through XEDI MCP/API rather than hand-writing unsupported graph 
 ## Build Flow
 
 1. Use `xedi.workflow_node_types` to discover valid nodes, required fields, optional fields and graph rules.
-2. If the user gives a plain-English workflow request, use `xedi.workflow_generate`.
-3. Create or update the workflow as a draft unless the user explicitly asks for active and validation passes.
-4. Run `xedi.workflow_validate` before activation.
-5. Use `xedi.workflow_update` to replace metadata or graph definitions by UUID.
-6. Use `xedi.workflow_run_get` to inspect delivery, notification and EDI tracking results after execution.
+2. If the user gives a plain-English workflow request, use `xedi.workflow_generate` to create a server draft.
+3. Immediately run `xedi.workflow_validate` on the returned definition. Treat any validation error or warning about reachability, missing trigger/source/output, incompatible edges or missing required data as a blocker.
+4. If the draft is invalid, fetch the current workflow with `xedi.workflow_get`, repair only with node types and fields from `xedi.workflow_node_types`, then call `xedi.workflow_validate` again.
+5. Use `xedi.workflow_update` only after the repaired draft is valid, or when saving an explicitly incomplete draft with the remaining blockers clearly stated.
+6. Create or update active workflows only when the user explicitly asks for active and validation passes.
+7. Use `xedi.workflow_run_get` to inspect delivery, notification and EDI tracking results after execution.
+
+## Generation Recovery
+
+- Do not present a broken generated graph as usable.
+- Do not hand-build an unsupported graph from memory. Use `xedi.workflow_node_types` and the returned validation errors as the repair guide.
+- Do not call XEDI mocked unless the tool response explicitly identifies the endpoint or route as mocked.
+- If the requested standard is TRADACOMS, X12, EDIFACT or PEPPOL, preserve that target standard through mapping selection, conversion target and validation format.
+- If no mapping matches the requested source, target standard and document type, ask the user to choose or create one rather than selecting a different EDI standard.
 
 ## Defaults
 
@@ -22,6 +31,21 @@ Build workflows through XEDI MCP/API rather than hand-writing unsupported graph 
 - Keep one trigger node, and make sure the first node matches the workflow `trigger_type`.
 - Keep nodes in execution order.
 - Space generated node positions horizontally so nodes do not overlap.
+
+## File Pickup Patterns
+
+- SFTP arrival trigger: use `trigger_type=sftp_file_arrived` with first node `trigger.sftp_file_arrived`; set `credential_id`, absolute `folder`, optional `file_pattern`, and post-processing fields.
+- FTP arrival trigger: use `trigger_type=ftp_file_arrived` with first node `trigger.ftp_file_arrived`.
+- Scheduled or manual folder polling: use `trigger.cron` or `trigger.manual` followed by `source.connection` with `credential_id`, `source_folder`, `file_selection`, and post-processing fields.
+- Webhook-triggered file reads: use `trigger.webhook` followed by `source.connection`.
+- API-triggered workflows should only use `trigger.api` and should not add `source.connection` unless the API request is intentionally ignored in favour of a configured source.
+
+## Mapping And Format Selection
+
+- `convert.format.data.target` uses broad format tokens such as `edifact`, `x12`, `tradacoms`, `peppol`, `json`, `csv` or `xml`.
+- `mapping_id` supplies the document-specific transform. Its `destination_format` and `document_type` must match the requested target standard and business document.
+- If the user says TRADACOMS, do not choose an EDIFACT mapping. If the user says EDIFACT, do not choose a TRADACOMS mapping.
+- For TGMS, prefer the mapping configured on the selected trading partner document sequence when one exists.
 
 ## Partner-Aware Delivery
 
