@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "xedi": {
+      "type": "http",
+      "url": "https://xedi.ai/mcp/server",
+      "headers": {
+        "Authorization": "Bearer ${user_config.api_token}"
+      }
+    }
+  }
+}
+

@@ -1,0 +1,32 @@
+{
+  "name": "xedi",
+  "displayName": "XEDI",
+  "version": "0.1.0",
+  "description": "Use xedi.ai MCP, APIs and workflow guidance for EDI conversion, validation, mapping and delivery automation.",
+  "author": {
+    "name": "XEDI",
+    "url": "https://xedi.ai"
+  },
+  "homepage": "https://xedi.ai/docs",
+  "keywords": [
+    "edi",
+    "mcp",
+    "workflow",
+    "x12",
+    "edifact",
+    "tradacoms",
+    "peppol",
+    "as2",
+    "tgms"
+  ],
+  "userConfig": {
+    "api_token": {
+      "type": "string",
+      "title": "XEDI API token",
+      "description": "Create an API token in xedi.ai and use it to authenticate MCP and API requests.",
+      "sensitive": true,
+      "required": true
+    }
+  }
+}
+
