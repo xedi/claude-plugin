@@ -9,12 +9,20 @@ Build workflows through XEDI MCP/API rather than hand-writing unsupported graph 
 ## Build Flow
 
 1. Use `xedi.workflow_node_types` to discover valid nodes, required fields, optional fields and graph rules.
-2. If the user gives a plain-English workflow request, use `xedi.workflow_generate` to create a server draft.
-3. Immediately run `xedi.workflow_validate` on the returned definition. Treat any validation error or warning about reachability, missing trigger/source/output, incompatible edges or missing required data as a blocker.
-4. If the draft is invalid, fetch the current workflow with `xedi.workflow_get`, repair only with node types and fields from `xedi.workflow_node_types`, then call `xedi.workflow_validate` again.
-5. Use `xedi.workflow_update` only after the repaired draft is valid, or when saving an explicitly incomplete draft with the remaining blockers clearly stated.
-6. Create or update active workflows only when the user explicitly asks for active and validation passes.
-7. Use `xedi.workflow_run_get` to inspect delivery, notification and EDI tracking results after execution.
+2. Normalise obvious spelling mistakes in the prompt before calling workflow tools, while preserving user intent.
+3. If the user gives a plain-English workflow request, use `xedi.workflow_generate` to create a server draft.
+4. Immediately run `xedi.workflow_validate` on the returned definition. Treat any validation error or warning about reachability, missing trigger/source/output, incompatible edges or missing required data as a blocker.
+5. If the draft is invalid, fetch the current workflow with `xedi.workflow_get`, repair only with node types and fields from `xedi.workflow_node_types`, then call `xedi.workflow_validate` again.
+6. Use `xedi.workflow_update` only after the repaired draft is valid, or when saving an explicitly incomplete draft with the remaining blockers clearly stated.
+7. Create or update active workflows only when the user explicitly asks for active and validation passes.
+8. Use `xedi.workflow_run_get` to inspect delivery, notification and EDI tracking results after execution.
+
+## Prompt Normalisation
+
+- Treat common typos as intent, not ambiguity: `tradacom`, `tradacomns` and `tradacoms` mean TRADACOMS; `edifcat` means EDIFACT; `tgms` means TGMS; `mapo` means map; `partbner` means partner.
+- When sending a prompt to `xedi.workflow_generate`, rewrite corrected terms with exact platform words such as `TRADACOMS Order`, `SFTP`, `TGMS trading partner`, and `Slack notifications`.
+- Preserve explicit folders exactly, including paths such as `/outgoing/orders/csv`.
+- If the user says "success or errors" for Slack or Teams, create notification coverage for success and error outcomes where the platform supports it; otherwise set the notification level to the closest valid option and explain the limitation.
 
 ## Generation Recovery
 
@@ -45,6 +53,7 @@ Build workflows through XEDI MCP/API rather than hand-writing unsupported graph 
 - `convert.format.data.target` uses broad format tokens such as `edifact`, `x12`, `tradacoms`, `peppol`, `json`, `csv` or `xml`.
 - `mapping_id` supplies the document-specific transform. Its `destination_format` and `document_type` must match the requested target standard and business document.
 - If the user says TRADACOMS, do not choose an EDIFACT mapping. If the user says EDIFACT, do not choose a TRADACOMS mapping.
+- For "CSV orders to TRADACOMS order", use `source=csv`, `target=tradacoms`, a mapping whose destination is TRADACOMS, and document type `order`.
 - For TGMS, prefer the mapping configured on the selected trading partner document sequence when one exists.
 
 ## Partner-Aware Delivery

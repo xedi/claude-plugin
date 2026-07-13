@@ -1,7 +1,7 @@
 {
   "name": "xedi",
   "displayName": "XEDI",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "Use xedi.ai MCP and APIs for platform operations, EDI conversion, validation, mapping, workflows, connections, labels, usage, billing and delivery automation.",
   "author": {
     "name": "XEDI",

@@ -78,8 +78,10 @@ During development, reload the plugin inside Claude Code after edits:
 ## Example Prompts
 
 ```text
-Use XEDI to create a draft workflow that picks up JSON orders from SFTP,
-maps them to EDIFACT ORDERS and delivers them to my TGMS partner.
+Create a draft workflow that picks up CSV order files from my SFTP
+connection folder /outgoing/orders/csv, maps them to a TRADACOMS Order,
+delivers them to my TGMS trading partner, and sends Slack notifications
+for success and error outcomes.
 ```
 
 ```text
