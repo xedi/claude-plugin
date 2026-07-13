@@ -9,6 +9,7 @@
   },
   "homepage": "https://xedi.ai/docs",
   "repository": "https://github.com/xedi/claude-plugin",
+  "license": "Apache-2.0",
   "keywords": [
     "edi",
     "mcp",

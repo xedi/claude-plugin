@@ -140,3 +140,9 @@ claude plugin validate . --strict
 ## Community Marketplace
 
 This repository is prepared for Claude Code plugin distribution. For community marketplace submission, validate the plugin locally, then submit the GitHub repository through Anthropic's Claude Code plugin process.
+
+## License
+
+This plugin is licensed under the [Apache License 2.0](LICENSE).
+
+XEDI, xedi.ai, the XEDI name, and the XEDI logos are trademarks or registered trademarks of XEDI Ltd. See [NOTICE](NOTICE) for trademark and attribution details.
