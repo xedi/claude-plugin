@@ -8,6 +8,7 @@
     "url": "https://xedi.ai"
   },
   "homepage": "https://xedi.ai/docs",
+  "repository": "https://github.com/xedi/claude-plugin",
   "keywords": [
     "edi",
     "mcp",
@@ -29,4 +30,3 @@
     }
   }
 }
-
