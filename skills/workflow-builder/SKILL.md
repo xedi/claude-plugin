@@ -4,7 +4,7 @@ description: Build, validate and update xedi.ai saved workflows from plain-Engli
 
 # XEDI Workflow Builder
 
-Build workflows through XEDI MCP/API rather than hand-writing unsupported graph shapes. Prefer draft workflows until the user has supplied all production credentials and partner choices.
+Build workflows through XEDI MCP/API rather than hand-writing unsupported graph shapes. Prefer draft workflows until the user has supplied all production credentials and partner choices. For the full MCP tool map, read `../../references/mcp-capabilities.md`.
 
 ## Build Flow
 
@@ -13,6 +13,7 @@ Build workflows through XEDI MCP/API rather than hand-writing unsupported graph 
 3. Create or update the workflow as a draft unless the user explicitly asks for active and validation passes.
 4. Run `xedi.workflow_validate` before activation.
 5. Use `xedi.workflow_update` to replace metadata or graph definitions by UUID.
+6. Use `xedi.workflow_run_get` to inspect delivery, notification and EDI tracking results after execution.
 
 ## Defaults
 
@@ -43,4 +44,4 @@ Build workflows through XEDI MCP/API rather than hand-writing unsupported graph 
 - Do not expose TGMS as SFTP.
 - Do not mention internal base folders or subfolder layouts for TGMS.
 - Prefer follow-up questions only when a missing value blocks safe workflow creation. Otherwise create a draft workflow the user can edit.
-
+- Use `xedi.api_request` for workflow run list filters until a dedicated list wrapper exists.

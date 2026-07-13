@@ -1,8 +1,8 @@
 {
   "name": "xedi",
   "displayName": "XEDI",
-  "version": "0.1.0",
-  "description": "Use xedi.ai MCP, APIs and workflow guidance for EDI conversion, validation, mapping and delivery automation.",
+  "version": "0.2.0",
+  "description": "Use xedi.ai MCP and APIs for platform operations, EDI conversion, validation, mapping, workflows, connections, labels, usage, billing and delivery automation.",
   "author": {
     "name": "XEDI",
     "url": "https://xedi.ai"
@@ -18,7 +18,11 @@
     "tradacoms",
     "peppol",
     "as2",
-    "tgms"
+    "tgms",
+    "connections",
+    "mappings",
+    "labels",
+    "billing"
   ],
   "userConfig": {
     "api_token": {

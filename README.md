@@ -5,7 +5,7 @@
 <h1 align="center">XEDI Claude Code Plugin</h1>
 
 <p align="center">
-  Give Claude Code native guidance for xedi.ai EDI conversion, validation, mapping, workflow generation and partner-aware delivery.
+  Give Claude Code native guidance for the full xedi.ai MCP surface: EDI conversion, validation, mappings, workflows, connections, labels, usage, billing and partner-aware delivery.
 </p>
 
 <p align="center">
@@ -26,14 +26,20 @@ This plugin helps Claude Code work with xedi.ai as an EDI automation platform. I
 - Converting between business data formats and EDI standards.
 - Validating EDIFACT, X12, TRADACOMS and PEPPOL payloads.
 - Applying reusable mappings without mixing them up with partner envelopes.
+- Managing encrypted workflow connections and browsing source folders.
+- Listing and fetching SSCC pallet label templates.
 - Building draft workflows from plain-English prompts.
+- Inspecting workflow runs, notification reports and delivery tracking.
+- Reading usage, token balance and subscription information.
 - Routing documents through partner-aware delivery destinations such as TGMS, AS2, FTP, SFTP, email, Slack and Teams.
+- Calling any authenticated `/api/v1` endpoint through `xedi.api_request` when the platform exposes a capability before it has a named MCP wrapper.
 
 ## Included Skills
 
 | Skill | Use It For |
 | --- | --- |
 | `xedi:mcp` | XEDI MCP discovery, authenticated API tools, connections, mappings, workflows and account usage. |
+| `xedi:platform-operations` | Full platform operations: usage, tokens, subscriptions, connections, labels, mappings, workflow runs and generic `/api/v1` calls. |
 | `xedi:edi-documents` | Document conversion, validation, mapping, EDI envelope guidance and partner-aware delivery preparation. |
 | `xedi:workflow-builder` | Creating, validating and updating XEDI workflows from natural-language requests. |
 
@@ -85,6 +91,16 @@ destination if it is unambiguous.
 ```
 
 ```text
+Show my XEDI usage summary, token balance and active managed-service
+subscriptions.
+```
+
+```text
+Browse the selected SFTP connection folder and help me choose the source path
+for a workflow trigger.
+```
+
+```text
 Create a reusable invoice mapping for JSON to EDIFACT, but keep envelope
 values on the trading partner document settings.
 ```
@@ -95,6 +111,7 @@ values on the trading partner document settings.
 - Mappings transform fields. Trading partners own envelopes, identifiers, ANA qualifiers and generation-number sequences.
 - Workflow generation starts as draft unless the user has supplied all production choices and validation passes.
 - Claude should discover node types, connection fields and API shapes through XEDI MCP instead of guessing.
+- Dedicated MCP tools are preferred, with `xedi.api_request` used as the escape hatch for the full authenticated `/api/v1` surface.
 
 ## Repository Layout
 
@@ -105,9 +122,12 @@ values on the trading partner document settings.
 ├── assets/
 │   ├── logo.png
 │   └── logo.svg
+├── references/
+│   └── mcp-capabilities.md
 └── skills/
     ├── edi-documents/SKILL.md
     ├── mcp/SKILL.md
+    ├── platform-operations/SKILL.md
     └── workflow-builder/SKILL.md
 ```
 
@@ -120,4 +140,3 @@ claude plugin validate . --strict
 ## Community Marketplace
 
 This repository is prepared for Claude Code plugin distribution. For community marketplace submission, validate the plugin locally, then submit the GitHub repository through Anthropic's Claude Code plugin process.
-

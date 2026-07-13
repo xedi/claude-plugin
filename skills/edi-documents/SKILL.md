@@ -4,7 +4,7 @@ description: Transform, validate and route EDI and business documents with xedi.
 
 # XEDI EDI Documents
 
-Use XEDI APIs and MCP tools for conversion, validation, mapping and delivery preparation. Prefer saved mappings and partner configuration over hand-authored envelope values.
+Use XEDI APIs and MCP tools for conversion, validation, parsing, generation, mapping and delivery preparation. Prefer saved mappings and partner configuration over hand-authored envelope values. For the full MCP tool map, read `../../references/mcp-capabilities.md`.
 
 ## Core Workflows
 
@@ -12,6 +12,8 @@ Use XEDI APIs and MCP tools for conversion, validation, mapping and delivery pre
 - Convert between JSON, CSV and XML using XEDI conversion endpoints.
 - Convert SAP IDocs to and from JSON, CSV, EDIFACT, X12, TRADACOMS and mapped PEPPOL document payloads.
 - Parse and validate EDIFACT, X12, TRADACOMS and PEPPOL payloads.
+- Detect unknown EDI payloads before choosing parser or validation settings.
+- Generate supported EDI payloads through `xedi.parser` when the user supplies mapped document JSON and required metadata.
 - Apply partner-specific mapping validation where a mapping exists.
 - Generate PEPPOL only from mapped document JSON and ensure Schematron validation passes before delivery.
 - Use `/api/v1/{input_type}/{output_type}` or the equivalent MCP conversion tools for tracked conversion work.
@@ -35,4 +37,3 @@ Use the platform document type selected by the mapping or trading partner config
 - Sales report
 
 When a user wants a reusable starter mapping, prefer generic document mappings for common TRADACOMS, EDIFACT and X12 document types, then let partner-specific settings override envelope and delivery concerns.
-
