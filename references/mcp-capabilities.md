@@ -9,8 +9,25 @@ Use this reference when a user asks what XEDI can do, when choosing the right MC
 - `xedi.health`: Check XEDI API availability.
 - `xedi.formats_list`: List supported source and target formats.
 - `xedi.conversions_list`: List supported conversion routes, actions, paths and native or mocked status.
+- `xedi.docs_search`: Search XEDI docs and source document templates for workflow, mapping and conversion context.
+- `xedi.docs_get`: Fetch a CSV, JSON or XML source document template by slug and format.
 
 Always prefer a dedicated MCP tool when one exists. Use `xedi.api_catalog` before guessing endpoint shapes. Use `xedi.api_request` for newer platform API endpoints, list endpoints without dedicated wrappers, or compatibility with the full `/api/v1` surface.
+
+## Docs And Source Templates
+
+Use `xedi.docs_search` and `xedi.docs_get` before inventing source document shapes for customer exports or starter mappings.
+
+Available source document template slugs are:
+
+- `order`
+- `order-change`
+- `invoice`
+- `despatch-advice`
+- `sales-report`
+- `inventory-report`
+
+Each template is available as `csv`, `json` and `xml`. The public manifest is `/docs/examples/source-documents.json`.
 
 ## Conversion, Validation And Parsing
 
@@ -87,6 +104,7 @@ Treat billing and purchase actions as high-impact. Confirm intent before calling
 - `GET /health`
 - `GET /formats`
 - `GET /conversions`
+- `GET /docs/examples/source-documents.json`
 - `GET /mappings`
 - `POST /mappings`
 - `GET /mapping/{uuid}`

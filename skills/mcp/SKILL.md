@@ -22,6 +22,7 @@ When capabilities are unclear, discover them before guessing:
 - MCP server card: `/.well-known/mcp/server-card.json`
 - API catalog: `/.well-known/api-catalog`
 - OpenAPI description: `/docs/openapi.yaml`
+- Source document templates: `/docs/examples/source-documents.json`
 
 ## Capability Reference
 
@@ -32,6 +33,7 @@ For the full current tool map, read `../../references/mcp-capabilities.md`.
 - `xedi.api_catalog` returns OpenAPI, MCP and agent discovery metadata.
 - `xedi.api_request` calls any authenticated `/api/v1` endpoint when a dedicated wrapper is not available.
 - Discovery tools cover health, supported formats and conversion routes.
+- Docs tools search and fetch CSV, JSON and XML source document templates for mapping and workflow context.
 - Document tools cover conversion, EDI validation, parser detection, parsing, conversion and generation.
 - Label tools list and fetch SSCC pallet label templates.
 - Mapping tools list, create, fetch, update, delete, apply and validate saved mappings.
@@ -43,6 +45,7 @@ For the full current tool map, read `../../references/mcp-capabilities.md`.
 
 - Prefer MCP tools over raw HTTP when the server exposes the needed capability.
 - Use `xedi.api_catalog` before inventing payload shapes.
+- Use `xedi.docs_search` and `xedi.docs_get` before inventing source document shapes for customer CSV, JSON or XML exports.
 - Use `xedi.workflow_node_types` before creating or updating workflow graphs.
 - Treat connection secrets as write-only. They are encrypted and are not returned by API or MCP responses.
 - Keep workflow definitions in trigger-to-output node order because execution follows node order.

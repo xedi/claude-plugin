@@ -17,6 +17,8 @@ Use XEDI APIs and MCP tools for conversion, validation, parsing, generation, map
 - Apply partner-specific mapping validation where a mapping exists.
 - Generate PEPPOL only from mapped document JSON and ensure Schematron validation passes before delivery.
 - Use `/api/v1/{input_type}/{output_type}` or the equivalent MCP conversion tools for tracked conversion work.
+- Use `xedi.docs_search` and `xedi.docs_get` to fetch source document templates before designing mappings or advising on customer exports.
+- Source templates are available at `/docs/examples/source-documents.json` for order, order change, invoice, despatch advice, sales report and inventory report workflows in CSV, JSON and XML.
 
 ## Partner And Envelope Rules
 
@@ -31,7 +33,8 @@ Use XEDI APIs and MCP tools for conversion, validation, parsing, generation, map
 Use the platform document type selected by the mapping or trading partner configuration. Common examples include:
 
 - Order
-- ASN or delivery advice
+- Order change
+- ASN or despatch advice
 - Invoice
 - Stock or inventory report
 - Sales report
