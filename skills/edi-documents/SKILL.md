@@ -19,6 +19,7 @@ Use XEDI APIs and MCP tools for conversion, validation, parsing, generation, map
 - Use `/api/v1/{input_type}/{output_type}` or the equivalent MCP conversion tools for tracked conversion work.
 - Use `xedi.docs_search` and `xedi.docs_get` to fetch source document templates before designing mappings or advising on customer exports.
 - Source templates are available at `/docs/examples/source-documents.json` for order, order change, invoice, despatch advice, sales report and inventory report workflows in CSV, JSON and XML.
+- Offline copies of those templates are bundled in `../../references/source-documents/`; use them when MCP or web docs are unavailable.
 
 ## Partner And Envelope Rules
 

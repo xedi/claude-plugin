@@ -1,0 +1,88 @@
+{
+  "document_type": "order",
+  "order_number": "PO-100045",
+  "order_date": "2026-07-14",
+  "currency": "GBP",
+  "order": {
+    "number": "PO-100045",
+    "date": "2026-07-14",
+    "currency": "GBP",
+    "lines": [
+      {
+        "line_number": 1,
+        "sku": "SKU-APPLE-001",
+        "ean": "05012345678901",
+        "description": "Apples 6 pack",
+        "quantity": 120,
+        "uom": "EA",
+        "unit_price": 1.25,
+        "line_amount": 150.00,
+        "delivery_date": "2026-07-18"
+      },
+      {
+        "line_number": 2,
+        "sku": "SKU-BREAD-002",
+        "ean": "05012345678918",
+        "description": "Wholemeal bread",
+        "quantity": 80,
+        "uom": "EA",
+        "unit_price": 1.10,
+        "line_amount": 88.00,
+        "delivery_date": "2026-07-18"
+      }
+    ]
+  },
+  "parties": {
+    "buyer": {
+      "gln": "5012345678900",
+      "name": "Example Retail Ltd"
+    },
+    "supplier": {
+      "gln": "5098765432100",
+      "name": "Example Foods Ltd"
+    },
+    "ship_to": {
+      "gln": "5012345678993",
+      "name": "Example Retail DC"
+    }
+  },
+  "buyer": {
+    "id": "5012345678900",
+    "name": "Example Retail Ltd"
+  },
+  "supplier": {
+    "id": "5098765432100",
+    "name": "Example Foods Ltd"
+  },
+  "delivery": {
+    "date": "2026-07-18",
+    "name": "Example Retail DC",
+    "address_line1": "1 Distribution Way",
+    "city": "Leeds",
+    "postcode": "LS1 1AA"
+  },
+  "lines": [
+    {
+      "line_number": 1,
+      "sku": "SKU-APPLE-001",
+      "ean": "05012345678901",
+      "description": "Apples 6 pack",
+      "quantity": 120,
+      "unit_of_measure": "EA",
+      "uom": "EA",
+      "unit_price": 1.25,
+      "line_total": 150.00
+    },
+    {
+      "line_number": 2,
+      "sku": "SKU-BREAD-002",
+      "ean": "05012345678918",
+      "description": "Wholemeal bread",
+      "quantity": 80,
+      "unit_of_measure": "EA",
+      "uom": "EA",
+      "unit_price": 1.10,
+      "line_total": 88.00
+    }
+  ]
+}

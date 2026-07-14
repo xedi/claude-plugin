@@ -1,0 +1,120 @@
+{
+  "document_type": "sales_report",
+  "report_number": "SLS-20260714",
+  "report_date": "2026-07-14",
+  "report_start_date": "2026-07-14",
+  "report_end_date": "2026-07-14",
+  "currency": "GBP",
+  "sales_report": {
+    "number": "SLS-20260714",
+    "date": "2026-07-14",
+    "start_date": "2026-07-14",
+    "end_date": "2026-07-14",
+    "store_id": "STORE001",
+    "lines": [
+      {
+        "line_number": 1,
+        "sku": "SKU-APPLE-001",
+        "activity_code": "QS",
+        "quantity": 42
+      },
+      {
+        "line_number": 2,
+        "sku": "SKU-BREAD-002",
+        "activity_code": "QS",
+        "quantity": 30
+      }
+    ]
+  },
+  "x12": {
+    "XQ01": "SA",
+    "XQ02": "2026-07-14",
+    "XQ03": "2026-07-14",
+    "N1": {
+      "ST": {
+        "02": "STORE001"
+      }
+    },
+    "lines": [
+      {
+        "LIN01": 1,
+        "LIN03": "SKU-APPLE-001",
+        "ZA01": "QS",
+        "ZA02": 42
+      },
+      {
+        "LIN01": 2,
+        "LIN03": "SKU-BREAD-002",
+        "ZA01": "QS",
+        "ZA02": 30
+      }
+    ]
+  },
+  "edifact": {
+    "UNH": {
+      "0062": "1"
+    },
+    "BGM": {
+      "1004": "SLS-20260714"
+    },
+    "DTM": {
+      "137": {
+        "2380": "20260714"
+      }
+    },
+    "NAD": {
+      "MS": {
+        "3039": "5012345678900"
+      },
+      "MR": {
+        "3039": "5098765432100"
+      }
+    }
+  },
+  "segments": [
+    {
+      "id": "LIN",
+      "qualifier": "SKU",
+      "value": "SKU-APPLE-001",
+      "reference": "1"
+    },
+    {
+      "id": "LIN",
+      "qualifier": "SKU",
+      "value": "SKU-BREAD-002",
+      "reference": "2"
+    }
+  ],
+  "retailer": {
+    "id": "5012345678900"
+  },
+  "supplier": {
+    "id": "5098765432100"
+  },
+  "store": {
+    "id": "STORE001",
+    "name": "Example Retail Leeds"
+  },
+  "lines": [
+    {
+      "line_number": 1,
+      "sku": "SKU-APPLE-001",
+      "sales_date": "2026-07-14",
+      "units_sold": 42,
+      "activity_code": "QS",
+      "quantity": 42,
+      "gross_sales": 63.00,
+      "net_sales": 52.50
+    },
+    {
+      "line_number": 2,
+      "sku": "SKU-BREAD-002",
+      "sales_date": "2026-07-14",
+      "units_sold": 30,
+      "activity_code": "QS",
+      "quantity": 30,
+      "gross_sales": 39.60,
+      "net_sales": 33.00
+    }
+  ]
+}

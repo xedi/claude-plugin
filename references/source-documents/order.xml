@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<order>
+  <document_type>order</document_type>
+  <order_number>PO-100045</order_number>
+  <order_date>2026-07-14</order_date>
+  <currency>GBP</currency>
+  <order_data>
+    <number>PO-100045</number>
+    <date>2026-07-14</date>
+    <currency>GBP</currency>
+    <lines>
+      <line>
+        <line_number>1</line_number>
+        <sku>SKU-APPLE-001</sku>
+        <ean>05012345678901</ean>
+        <description>Apples 6 pack</description>
+        <quantity>120</quantity>
+        <uom>EA</uom>
+        <unit_price>1.25</unit_price>
+        <line_amount>150.00</line_amount>
+        <delivery_date>2026-07-18</delivery_date>
+      </line>
+      <line>
+        <line_number>2</line_number>
+        <sku>SKU-BREAD-002</sku>
+        <ean>05012345678918</ean>
+        <description>Wholemeal bread</description>
+        <quantity>80</quantity>
+        <uom>EA</uom>
+        <unit_price>1.10</unit_price>
+        <line_amount>88.00</line_amount>
+        <delivery_date>2026-07-18</delivery_date>
+      </line>
+    </lines>
+  </order_data>
+  <parties>
+    <buyer>
+      <gln>5012345678900</gln>
+      <name>Example Retail Ltd</name>
+    </buyer>
+    <supplier>
+      <gln>5098765432100</gln>
+      <name>Example Foods Ltd</name>
+    </supplier>
+    <ship_to>
+      <gln>5012345678993</gln>
+      <name>Example Retail DC</name>
+    </ship_to>
+  </parties>
+  <buyer id="5012345678900">
+    <name>Example Retail Ltd</name>
+  </buyer>
+  <supplier id="5098765432100">
+    <name>Example Foods Ltd</name>
+  </supplier>
+  <delivery>
+    <date>2026-07-18</date>
+    <name>Example Retail DC</name>
+    <address_line1>1 Distribution Way</address_line1>
+    <city>Leeds</city>
+    <postcode>LS1 1AA</postcode>
+  </delivery>
+  <lines>
+    <line>
+      <line_number>1</line_number>
+      <sku>SKU-APPLE-001</sku>
+      <ean>05012345678901</ean>
+      <description>Apples 6 pack</description>
+      <quantity>120</quantity>
+      <unit_of_measure>EA</unit_of_measure>
+      <uom>EA</uom>
+      <unit_price>1.25</unit_price>
+      <line_total>150.00</line_total>
+    </line>
+    <line>
+      <line_number>2</line_number>
+      <sku>SKU-BREAD-002</sku>
+      <ean>05012345678918</ean>
+      <description>Wholemeal bread</description>
+      <quantity>80</quantity>
+      <unit_of_measure>EA</unit_of_measure>
+      <uom>EA</uom>
+      <unit_price>1.10</unit_price>
+      <line_total>88.00</line_total>
+    </line>
+  </lines>
+</order>

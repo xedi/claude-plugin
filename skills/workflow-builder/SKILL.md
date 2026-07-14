@@ -52,6 +52,7 @@ Build workflows through XEDI MCP/API rather than hand-writing unsupported graph 
 ## Mapping And Format Selection
 
 - Source document templates are available through `xedi.docs_search`, `xedi.docs_get` and `/docs/examples/source-documents.json`.
+- Offline copies are bundled in `../../references/source-documents/`.
 - Use the source templates as stable field-name context for order, order change, invoice, despatch advice, sales report and inventory report exports.
 - `convert.format.data.target` uses broad format tokens such as `edifact`, `x12`, `tradacoms`, `peppol`, `json`, `csv` or `xml`.
 - `mapping_id` supplies the document-specific transform. Its `destination_format` and `document_type` must match the requested target standard and business document.

@@ -1,0 +1,78 @@
+{
+  "document_type": "despatch_advice",
+  "despatch_number": "ASN-700045",
+  "despatch_date": "2026-07-18",
+  "order_number": "PO-100045",
+  "asn": {
+    "number": "ASN-700045",
+    "date": "2026-07-18",
+    "delivery_date": "2026-07-18",
+    "lines": [
+      {
+        "line_number": 1,
+        "sku": "SKU-APPLE-001",
+        "ean": "05012345678901",
+        "ordered_quantity": 120,
+        "quantity": 120,
+        "uom": "EA",
+        "package_id": "050123450000000018"
+      },
+      {
+        "line_number": 2,
+        "sku": "SKU-BREAD-002",
+        "ean": "05012345678918",
+        "ordered_quantity": 80,
+        "quantity": 76,
+        "uom": "EA",
+        "package_id": "050123450000000018"
+      }
+    ]
+  },
+  "parties": {
+    "ship_from": {
+      "gln": "5098765432100",
+      "name": "Example Foods Warehouse"
+    },
+    "ship_to": {
+      "gln": "5012345678993",
+      "name": "Example Retail DC"
+    }
+  },
+  "buyer": {
+    "id": "5012345678900"
+  },
+  "supplier": {
+    "id": "5098765432100"
+  },
+  "shipment": {
+    "ship_from": "Example Foods Warehouse",
+    "ship_to": "Example Retail DC",
+    "carrier": "Example Logistics",
+    "tracking_number": "TRK100045",
+    "sscc": "050123450000000018"
+  },
+  "lines": [
+    {
+      "line_number": 1,
+      "sku": "SKU-APPLE-001",
+      "ean": "05012345678901",
+      "ordered_quantity": 120,
+      "shipped_quantity": 120,
+      "quantity": 120,
+      "unit_of_measure": "EA",
+      "uom": "EA",
+      "package_id": "050123450000000018"
+    },
+    {
+      "line_number": 2,
+      "sku": "SKU-BREAD-002",
+      "ean": "05012345678918",
+      "ordered_quantity": 80,
+      "shipped_quantity": 76,
+      "quantity": 76,
+      "unit_of_measure": "EA",
+      "uom": "EA",
+      "package_id": "050123450000000018"
+    }
+  ]
+}

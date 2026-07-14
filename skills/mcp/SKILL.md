@@ -23,6 +23,7 @@ When capabilities are unclear, discover them before guessing:
 - API catalog: `/.well-known/api-catalog`
 - OpenAPI description: `/docs/openapi.yaml`
 - Source document templates: `/docs/examples/source-documents.json`
+- Bundled source templates: `../../references/source-documents/`
 
 ## Capability Reference
 

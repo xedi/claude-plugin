@@ -29,6 +29,8 @@ Available source document template slugs are:
 
 Each template is available as `csv`, `json` and `xml`. The public manifest is `/docs/examples/source-documents.json`.
 
+Offline copies are bundled in `references/source-documents/` for use before MCP/web discovery is available.
+
 ## Conversion, Validation And Parsing
 
 - `xedi.convert_generic`: Convert through `/api/v1/convert` with explicit source and target formats.

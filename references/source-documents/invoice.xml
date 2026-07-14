@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<invoice>
+  <document_type>invoice</document_type>
+  <invoice_number>INV-900045</invoice_number>
+  <invoice_date>2026-07-19</invoice_date>
+  <order_number>PO-100045</order_number>
+  <currency>GBP</currency>
+  <invoice_data>
+    <number>INV-900045</number>
+    <date>2026-07-19</date>
+    <purchase_order_number>PO-100045</purchase_order_number>
+    <currency>GBP</currency>
+    <lines>
+      <line>
+        <line_number>1</line_number>
+        <sku>SKU-APPLE-001</sku>
+        <ean>05012345678901</ean>
+        <description>Apples 6 pack</description>
+        <quantity>120</quantity>
+        <uom>EA</uom>
+        <unit_price>1.25</unit_price>
+        <line_amount>150.00</line_amount>
+      </line>
+      <line>
+        <line_number>2</line_number>
+        <sku>SKU-BREAD-002</sku>
+        <ean>05012345678918</ean>
+        <description>Wholemeal bread</description>
+        <quantity>80</quantity>
+        <uom>EA</uom>
+        <unit_price>1.10</unit_price>
+        <line_amount>88.00</line_amount>
+      </line>
+    </lines>
+  </invoice_data>
+  <parties>
+    <buyer>
+      <gln>5012345678900</gln>
+      <name>Example Retail Ltd</name>
+    </buyer>
+    <supplier>
+      <gln>5098765432100</gln>
+      <name>Example Foods Ltd</name>
+    </supplier>
+  </parties>
+  <buyer id="5012345678900">
+    <name>Example Retail Ltd</name>
+  </buyer>
+  <supplier id="5098765432100">
+    <name>Example Foods Ltd</name>
+  </supplier>
+  <totals>
+    <tax_rate>20.00</tax_rate>
+    <net_total>238.00</net_total>
+    <tax_total>47.60</tax_total>
+    <gross_total>285.60</gross_total>
+  </totals>
+  <lines>
+    <line>
+      <line_number>1</line_number>
+      <sku>SKU-APPLE-001</sku>
+      <ean>05012345678901</ean>
+      <description>Apples 6 pack</description>
+      <quantity>120</quantity>
+      <uom>EA</uom>
+      <unit_of_measure>EA</unit_of_measure>
+      <unit_price>1.25</unit_price>
+      <line_amount>150.00</line_amount>
+      <line_net>150.00</line_net>
+    </line>
+    <line>
+      <line_number>2</line_number>
+      <sku>SKU-BREAD-002</sku>
+      <ean>05012345678918</ean>
+      <description>Wholemeal bread</description>
+      <quantity>80</quantity>
+      <uom>EA</uom>
+      <unit_of_measure>EA</unit_of_measure>
+      <unit_price>1.10</unit_price>
+      <line_amount>88.00</line_amount>
+      <line_net>88.00</line_net>
+    </line>
+  </lines>
+</invoice>

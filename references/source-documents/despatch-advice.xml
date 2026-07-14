@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<despatch_advice>
+  <document_type>despatch_advice</document_type>
+  <despatch_number>ASN-700045</despatch_number>
+  <despatch_date>2026-07-18</despatch_date>
+  <order_number>PO-100045</order_number>
+  <asn>
+    <number>ASN-700045</number>
+    <date>2026-07-18</date>
+    <delivery_date>2026-07-18</delivery_date>
+    <lines>
+      <line>
+        <line_number>1</line_number>
+        <sku>SKU-APPLE-001</sku>
+        <ean>05012345678901</ean>
+        <ordered_quantity>120</ordered_quantity>
+        <quantity>120</quantity>
+        <uom>EA</uom>
+        <package_id>050123450000000018</package_id>
+      </line>
+      <line>
+        <line_number>2</line_number>
+        <sku>SKU-BREAD-002</sku>
+        <ean>05012345678918</ean>
+        <ordered_quantity>80</ordered_quantity>
+        <quantity>76</quantity>
+        <uom>EA</uom>
+        <package_id>050123450000000018</package_id>
+      </line>
+    </lines>
+  </asn>
+  <parties>
+    <ship_from>
+      <gln>5098765432100</gln>
+      <name>Example Foods Warehouse</name>
+    </ship_from>
+    <ship_to>
+      <gln>5012345678993</gln>
+      <name>Example Retail DC</name>
+    </ship_to>
+  </parties>
+  <buyer id="5012345678900"/>
+  <supplier id="5098765432100"/>
+  <shipment>
+    <ship_from>Example Foods Warehouse</ship_from>
+    <ship_to>Example Retail DC</ship_to>
+    <carrier>Example Logistics</carrier>
+    <tracking_number>TRK100045</tracking_number>
+    <sscc>050123450000000018</sscc>
+  </shipment>
+  <lines>
+    <line>
+      <line_number>1</line_number>
+      <sku>SKU-APPLE-001</sku>
+      <ean>05012345678901</ean>
+      <ordered_quantity>120</ordered_quantity>
+      <shipped_quantity>120</shipped_quantity>
+      <quantity>120</quantity>
+      <unit_of_measure>EA</unit_of_measure>
+      <uom>EA</uom>
+      <package_id>050123450000000018</package_id>
+    </line>
+    <line>
+      <line_number>2</line_number>
+      <sku>SKU-BREAD-002</sku>
+      <ean>05012345678918</ean>
+      <ordered_quantity>80</ordered_quantity>
+      <shipped_quantity>76</shipped_quantity>
+      <quantity>76</quantity>
+      <unit_of_measure>EA</unit_of_measure>
+      <uom>EA</uom>
+      <package_id>050123450000000018</package_id>
+    </line>
+  </lines>
+</despatch_advice>

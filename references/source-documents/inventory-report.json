@@ -1,0 +1,116 @@
+{
+  "document_type": "inventory_report",
+  "report_number": "INVSTK-20260714",
+  "report_date": "2026-07-14",
+  "inventory_report": {
+    "number": "INVSTK-20260714",
+    "date": "2026-07-14",
+    "warehouse_id": "WH001",
+    "lines": [
+      {
+        "line_number": 1,
+        "sku": "SKU-APPLE-001",
+        "quantity_qualifier": "33",
+        "quantity": 500
+      },
+      {
+        "line_number": 2,
+        "sku": "SKU-BREAD-002",
+        "quantity_qualifier": "33",
+        "quantity": 20
+      }
+    ]
+  },
+  "x12": {
+    "BIA01": "00",
+    "BIA02": "SI",
+    "BIA03": "INVSTK-20260714",
+    "BIA04": "2026-07-14",
+    "lines": [
+      {
+        "LIN01": 1,
+        "LIN03": "SKU-APPLE-001",
+        "QTY01": "33",
+        "QTY02": 500
+      },
+      {
+        "LIN01": 2,
+        "LIN03": "SKU-BREAD-002",
+        "QTY01": "33",
+        "QTY02": 20
+      }
+    ]
+  },
+  "edifact": {
+    "UNH": {
+      "0062": "1"
+    },
+    "BGM": {
+      "1004": "INVSTK-20260714"
+    },
+    "DTM": {
+      "137": {
+        "2380": "20260714"
+      }
+    },
+    "NAD": {
+      "MS": {
+        "3039": "5098765432100"
+      },
+      "MR": {
+        "3039": "5012345678900"
+      }
+    }
+  },
+  "segments": [
+    {
+      "id": "LIN",
+      "qualifier": "SKU",
+      "value": "SKU-APPLE-001",
+      "reference": "1"
+    },
+    {
+      "id": "LIN",
+      "qualifier": "SKU",
+      "value": "SKU-BREAD-002",
+      "reference": "2"
+    }
+  ],
+  "warehouse": {
+    "id": "WH001",
+    "name": "Example Retail DC"
+  },
+  "supplier": {
+    "id": "5098765432100"
+  },
+  "lines": [
+    {
+      "line_number": 1,
+      "sku": "SKU-APPLE-001",
+      "ean": "05012345678901",
+      "description": "Apples 6 pack",
+      "on_hand_quantity": 520,
+      "available_quantity": 500,
+      "allocated_quantity": 20,
+      "unit_of_measure": "EA",
+      "uom": "EA",
+      "quantity_qualifier": "33",
+      "quantity": 500,
+      "stock_status": "available"
+    },
+    {
+      "line_number": 2,
+      "sku": "SKU-BREAD-002",
+      "ean": "05012345678918",
+      "description": "Wholemeal bread",
+      "on_hand_quantity": 40,
+      "available_quantity": 20,
+      "allocated_quantity": 20,
+      "unit_of_measure": "EA",
+      "uom": "EA",
+      "quantity_qualifier": "33",
+      "quantity": 20,
+      "stock_status": "low_stock"
+    }
+  ]
+}

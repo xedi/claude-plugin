@@ -1,0 +1,117 @@
+{
+  "document_type": "order_change",
+  "change_number": "POC-100045-1",
+  "original_order_number": "PO-100045",
+  "change_date": "2026-07-15",
+  "change_reason": "Buyer quantity update",
+  "currency": "GBP",
+  "order_change": {
+    "number": "POC-100045-1",
+    "original_order_number": "PO-100045",
+    "date": "2026-07-15",
+    "currency": "GBP",
+    "lines": [
+      {
+        "line_number": 1,
+        "change_code": "QC",
+        "sku": "SKU-APPLE-001",
+        "quantity": 100,
+        "uom": "EA",
+        "unit_price": 1.25
+      },
+      {
+        "line_number": 3,
+        "change_code": "AI",
+        "sku": "SKU-MILK-003",
+        "quantity": 48,
+        "uom": "EA",
+        "unit_price": 0.95
+      }
+    ]
+  },
+  "x12": {
+    "BCH01": "04",
+    "BCH02": "SA",
+    "BCH03": "PO-100045",
+    "BCH06": "2026-07-15",
+    "lines": [
+      {
+        "POC01": 1,
+        "POC02": "QC",
+        "POC03": 100,
+        "POC09": "SKU-APPLE-001"
+      },
+      {
+        "POC01": 3,
+        "POC02": "AI",
+        "POC03": 48,
+        "POC09": "SKU-MILK-003"
+      }
+    ]
+  },
+  "edifact": {
+    "UNH": {
+      "0062": "1"
+    },
+    "BGM": {
+      "1004": "PO-100045"
+    },
+    "DTM": {
+      "137": {
+        "2380": "20260715"
+      }
+    },
+    "NAD": {
+      "MS": {
+        "3039": "5012345678900"
+      },
+      "MR": {
+        "3039": "5098765432100"
+      }
+    }
+  },
+  "segments": [
+    {
+      "id": "LIN",
+      "qualifier": "SKU",
+      "value": "SKU-APPLE-001",
+      "reference": "1"
+    },
+    {
+      "id": "LIN",
+      "qualifier": "SKU",
+      "value": "SKU-MILK-003",
+      "reference": "3"
+    }
+  ],
+  "buyer": {
+    "id": "5012345678900"
+  },
+  "supplier": {
+    "id": "5098765432100"
+  },
+  "lines": [
+    {
+      "line_number": 1,
+      "sku": "SKU-APPLE-001",
+      "action": "change",
+      "change_code": "QC",
+      "original_quantity": 120,
+      "revised_quantity": 100,
+      "unit_of_measure": "EA",
+      "uom": "EA",
+      "unit_price": 1.25
+    },
+    {
+      "line_number": 3,
+      "sku": "SKU-MILK-003",
+      "action": "add",
+      "change_code": "AI",
+      "original_quantity": 0,
+      "revised_quantity": 48,
+      "unit_of_measure": "EA",
+      "uom": "EA",
+      "unit_price": 0.95
+    }
+  ]
+}

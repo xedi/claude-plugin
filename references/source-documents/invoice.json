@@ -1,0 +1,85 @@
+{
+  "document_type": "invoice",
+  "invoice_number": "INV-900045",
+  "invoice_date": "2026-07-19",
+  "order_number": "PO-100045",
+  "currency": "GBP",
+  "invoice": {
+    "number": "INV-900045",
+    "date": "2026-07-19",
+    "purchase_order_number": "PO-100045",
+    "currency": "GBP",
+    "lines": [
+      {
+        "line_number": 1,
+        "sku": "SKU-APPLE-001",
+        "ean": "05012345678901",
+        "description": "Apples 6 pack",
+        "quantity": 120,
+        "uom": "EA",
+        "unit_price": 1.25,
+        "line_amount": 150.00
+      },
+      {
+        "line_number": 2,
+        "sku": "SKU-BREAD-002",
+        "ean": "05012345678918",
+        "description": "Wholemeal bread",
+        "quantity": 80,
+        "uom": "EA",
+        "unit_price": 1.10,
+        "line_amount": 88.00
+      }
+    ]
+  },
+  "parties": {
+    "buyer": {
+      "gln": "5012345678900",
+      "name": "Example Retail Ltd"
+    },
+    "supplier": {
+      "gln": "5098765432100",
+      "name": "Example Foods Ltd"
+    }
+  },
+  "buyer": {
+    "id": "5012345678900",
+    "name": "Example Retail Ltd"
+  },
+  "supplier": {
+    "id": "5098765432100",
+    "name": "Example Foods Ltd"
+  },
+  "totals": {
+    "tax_rate": 20.00,
+    "net_total": 238.00,
+    "tax_total": 47.60,
+    "gross_total": 285.60
+  },
+  "lines": [
+    {
+      "line_number": 1,
+      "sku": "SKU-APPLE-001",
+      "ean": "05012345678901",
+      "description": "Apples 6 pack",
+      "quantity": 120,
+      "uom": "EA",
+      "unit_of_measure": "EA",
+      "unit_price": 1.25,
+      "line_amount": 150.00,
+      "line_net": 150.00
+    },
+    {
+      "line_number": 2,
+      "sku": "SKU-BREAD-002",
+      "ean": "05012345678918",
+      "description": "Wholemeal bread",
+      "quantity": 80,
+      "uom": "EA",
+      "unit_of_measure": "EA",
+      "unit_price": 1.10,
+      "line_amount": 88.00,
+      "line_net": 88.00
+    }
+  ]
+}
